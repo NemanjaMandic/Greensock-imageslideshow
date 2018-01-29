@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta charset="utf-8" />
+ <title>Chapter 17 - Windows</title>
+ <style>
+     .glass {
+         position: fixed;
+         left: 0;
+         top: 0;
+         background-color: rgba(225,225,225,.7);
+         height: 100vh;
+         width: 100vw;
+         z-index: 100;
+    }
+    
+    .dialog {
+         height: 125px;
+         width: 220px;
+         margin: 0 auto;
+         padding: 15px;
+         border: 1px solid black;
+         background-color: white;
+    }
+ </style>
+
+ </head>
+ <body>
+ 
+ <p>Hello World!</p>
+ <button onclick="showDialog()">Show Dialog</button>
+ <div id="glass" class="glass">
+ <div class="dialog">
+ <h3>Prompt</h3>
+ <p>How many pets do you have?</p>
+ <input type="number" value="0" id="numPets" />
+ <button id="dialogOK" type="Submit" onclick="OK()">OK</button>
+ </div>
+ </div>
+ 
+  <script>
+   
+     
+     function showDialog(){
+         var dialog = document.getElementById("glass");
+         dialog.style.visibility = "visible";
+     }
+     
+     function closeDialog() {
+         var dialog = document.getElementById("glass");
+         dialog.style.visibility = "hidden";
+    }
+    
+    function OK(){
+        var input = document.getElementById("numPets").value;
+        closeDialog();
+        console.log("Pets: " + input);
+    }
+    
+    closeDialog();
+ </script>
+ </body>
+</html>
