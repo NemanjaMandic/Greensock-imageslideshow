@@ -100,7 +100,7 @@
        
     });
     
-    //This is the code to create tilt effect
+    //This is the code to create mouse move tilt effect
     $(document).mousemove(function(event){
         
         var xPos = (event.clientX / $(window).width()) - 0.5;
